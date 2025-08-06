@@ -128,6 +128,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'bookshelf.apps.BookshelfConfig',
-    'bookshelf',  # Ensure the bookshelf app is included
+    'bookshelf.apps.BookshelfConfig',
+    # Ensure the bookshelf app is included
 ]
