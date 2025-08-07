@@ -11,5 +11,16 @@
         <li>{{ book.title }} by {{ book.author.name }}</li>
         {% endfor %}
     </ul>
+
+<div style="position: absolute; top: 10px; right: 10px;">
+    {% if user.is_authenticated %}
+        <span>Hello, {{ user.username }}!</span>
+        <a href="{% url 'relationship_app:logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'relationship_app:login' %}">Login</a>
+        <a href="{% url 'relationship_app:register' %}">Register</a>
+    {% endif %}
+</div>    
+
 </body>
 </html>
