@@ -35,4 +35,4 @@ def query_books_in_library(library_name):
 
 # 3. Retrieve the librarian for a library
 def query_librarian_for_library(library_name):
-    return Librarian.objects.get(library_name=library_name)
+    return Librarian.objects.get(library=library_name)
