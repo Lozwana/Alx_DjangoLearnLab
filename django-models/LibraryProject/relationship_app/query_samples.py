@@ -26,7 +26,8 @@ def create_sample_data():
 
 # 1. Query all books by a specific author
 def query_books_by_author(author_name):
-    return Book.objects.filter(author__name=author_name)
+    author = Author.objects.get(name=author_name)
+    return Book.objects.filter(author=author)
 
 # 2. List all books in a library
 def query_books_in_library(library_name):
@@ -34,4 +35,4 @@ def query_books_in_library(library_name):
 
 # 3. Retrieve the librarian for a library
 def query_librarian_for_library(library_name):
-    return Librarian.objects.get(library__name=library_name)
+    return Librarian.objects.get(library_name=library_name)
