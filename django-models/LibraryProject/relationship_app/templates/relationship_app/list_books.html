@@ -21,6 +21,22 @@
         <a href="{% url 'relationship_app:register' %}">Register</a>
     {% endif %}
 </div>    
+<div>
+    {% if can_add %}
+        <a href="{% url 'relationship_app:book_create' %}">Add New Book</a>
+    {% endif %}
 
+    {% for book in books %}
+        <li>
+            {{ book.title }} by {{ book.author.name }}
+            {% if perms.relationship_app.can_change_book %}
+                <a href="{% url 'relationship_app:book_update' book.pk %}">Edit</a>
+            {% endif %}
+            {% if perms.relationship_app.can_delete_book %}
+                <a href="{% url 'relationship_app:book_delete' book.pk %}">Delete</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</div>
 </body>
 </html>

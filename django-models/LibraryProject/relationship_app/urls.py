@@ -6,7 +6,10 @@ LibraryDetailView,
 register_view,
 admin_view,
 librarian_view,
-member_view
+member_view,
+book_create,
+book_update,
+book_delete
 )
 
 app_name = 'relationship_app'
@@ -30,4 +33,9 @@ urlpatterns = [
     path('admin/dashboard/', admin_view, name='admin_dashboard'),
     path('librarian/dashboard/', librarian_view, name='librarian_dashboard'),
     path('member/dashboard/', member_view, name='member_dashboard'),
+    
+    # Book management URLs
+    path('books/add/', book_create, name='book_create'),
+    path('books/<int:pk>/edit/', book_update, name='book_update'),
+    path('books/<int:pk>/delete/', book_delete, name='book_delete'),
 ]
