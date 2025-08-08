@@ -35,7 +35,8 @@ urlpatterns = [
     path('member/dashboard/', member_view, name='member_dashboard'),
     
     # Book management URLs
-    path('books/add/', book_create, name='book_create'),
-    path('books/<int:pk>/edit/', book_update, name='book_update'),
-    path('books/<int:pk>/delete/', book_delete, name='book_delete'),
+    path('books/add_book/', book_create, name='add_book'),
+    path('books/edit_book/<int:pk>/', book_update, name='edit_book'),
+    path('books/delete_book/<int:pk>/', book_delete, name='delete_book'),
+   
 ]
